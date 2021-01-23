@@ -1,3 +1,1 @@
-slack_sdk>=3.0
-slackeventsapi>=2.1.0
-Flask>=1.1.2
+slack_bolt>=1.2.3
