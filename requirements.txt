@@ -1,1 +1,4 @@
 slack_bolt>=1.2.3
+google-api-python-client>=1.12.8
+google-auth-httplib2
+google-auth-oauthlib
