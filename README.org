@@ -1,0 +1,50 @@
+# cts_slack_bot
+* A bot for the CTS Slack
+
+Currently the bot is blue_falcon.py
+** Installation
+*** Using Poetry
+1. Ensure you have the appropriate authentication keys, located at: [[https://api.slack.com/apps][Slack API: Applications | Slack]]
+2. download the code, install dependencies with poetry
+  #+BEGIN_SRC bash
+   git clone https://github.com/Continue-to-Serve/cts_slack_bot.git
+   cd cts_slack_bot
+   poetry install
+  #+END_SRC
+3. if using direnv create .envrc - rename .envrc template and fill in tokens
+4. authorize .envrc file
+   #+BEGIN_SRC bash
+   direnv allow
+   #+END_SRC
+** Running the Bot
+start poetry shell and run bot
+   #+BEGIN_SRC bash
+   poetry shell
+   python blue_falcon.py
+   #+END_SRC
+
+
+** Current Functionality
+It greets to members when they join and asks them to introduce themselves.
+
+** Configuration
+The message and channel can be customized by changing the values in config.toml
+Notably, it currently supports the variables user_id and channel_id when enclosed in {}.
+Slack converts these into the links if they are further enclosed in <> with a leader @ or # (user and channel, respectively)
+
+Example: <@{user_id}> or <@{channel_id}> 
+These can also be expressed explicitly with, for example <@U0196V8A137> would be replaced with my current display name.
+
+** Development Information
+Uses the slack bolt sdk, in socket mode.
+The authentication data is stored in environment variables:
+SLACK_OAUTH
+SLACK_APP_TOKEN
+
+I am using direnv to manage them in a .envrc file which is autoloaded when the directory is accessed. This can be done manually with the commands:
+#+BEGIN_SRC bash
+export SLACK_OAUTH=[OAUTH TOKEN HERE]
+export SLACK_APP_TOKEN=[APP TOKEN HERE]
+#+END_SRC
+
+currently using poetry to manage dependencies, see file:./pyproject.toml

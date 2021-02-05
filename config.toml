@@ -5,8 +5,7 @@
 # header is the top line message
 header="Give a warm welcome to <#{channel_id}> <@{user_id}>!"
 # fold is sent as the first reply
-fold="Welcome to the team, <@{user_id}>! please reply here with your name, branch of service, the state you're from, and anything else about you! It's good to have you here :relaxed:
-Please be sure to add yourself to other channels! If you need assistance, view the message pinned to this one, at the top."
+fold="Welcome to the team, <@{user_id}>! please reply here with your name, branch of service, the state you're from, and anything else about you! It's good to have you here :relaxed:\nPlease be sure to add yourself to other channels! If you need assistance, view the message pinned to this one, at the top."
 # channel should be the channel ID (found in URL)
 # for example in the url:
 # https://app.slack.com/client/T019492FSMB/C0195S27CP5
